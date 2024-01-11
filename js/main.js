@@ -1,4 +1,11 @@
-let a = prompt("Введите первое число", 1)
-let b = prompt("Введите второе число", 1)
+let q = confirm("Всё ок?")
 
-alert(`Результат - ${Number(a)+Number(b)}`)
+let ans;
+
+if(q === true){
+    ans = "Хорошо, что всё хорошо!"    
+}
+else{
+    ans = "Не грусти("    
+}
+alert(ans)
