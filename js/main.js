@@ -1,5 +1,4 @@
-const name = "Anton"
-const admin = name 
+let a = prompt("Введите первое число", 1)
+let b = prompt("Введите второе число", 1)
 
-
-alert( admin )
+alert(`Результат - ${Number(a)+Number(b)}`)
