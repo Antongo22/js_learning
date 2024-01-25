@@ -1,30 +1,19 @@
-// do while провера на полиндром
-/* 
-let word = prompt('Введите слово:');
-let reversedWord = '';
-let i = word.length - 1;
+document.addEventListener('DOMContentLoaded', function() {
+  const changeColorButton = document.getElementById('changeColorButton');
+  const colorCodeSpan = document.getElementById('colorCodeSpan');
 
-do {
-  reversedWord += word[i];
-  i--;
-} while (i >= 0);
+  changeColorButton.addEventListener('click', function() {
+    const randomColor = getRandomColor();
+    document.body.style.backgroundColor = randomColor;
+    colorCodeSpan.textContent = randomColor;
+  });
 
-let result = word.toLowerCase() === reversedWord.toLowerCase() ? 'является полиндромом' : 'не является полиндромом';
-
-alert(`Слово "${word}" ${result}`);
- */
-
-// do while проверка 
-
-let input = prompt('Введите числа через запятую:');
-let numbers = input.split(',').map(num => parseInt(num.trim()));
-
-let sum = 0;
-let i = 0;
-
-do {
-  sum += numbers[i];
-  i++;
-} while (i < numbers.length);
-
-alert(`Сумма введенных чисел: ${sum}`);
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+});
