@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const changeColorButton = document.getElementById('changeColorButton');
-  const colorCodeSpan = document.getElementById('colorCodeSpan');
+  const textInput = document.getElementById('textInput');
+  const coloredText = document.getElementById('coloredText');
 
-  changeColorButton.addEventListener('click', function() {
-    const randomColor = getRandomColor();
-    document.body.style.backgroundColor = randomColor;
-    colorCodeSpan.textContent = randomColor;
+  textInput.addEventListener('input', function() {
+    const text = textInput.value;
+    const words = text.split(' ');
+    const coloredWords = words.map(word => {
+      const randomColor = getRandomColor();
+      return `<span style="color: ${randomColor};">${word}</span>`;
+    });
+    coloredText.innerHTML = coloredWords.join(' ');
   });
 
   function getRandomColor() {

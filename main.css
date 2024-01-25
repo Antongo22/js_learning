@@ -1,14 +1,5 @@
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: rgb(197, 26, 26)
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+#coloredText {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 18px;
 }
