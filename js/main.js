@@ -1,70 +1,68 @@
-/* let price = parseInt(prompt("Введите количество денег"));
-let range = prompt("Введите период");
-let rangeTranslation;
+// 1 
+/* let word = prompt("Введите слово:");
+let newWord = '';
 
-if (range === "day") {
-  rangeTranslation = "день";
-} else if (range === "month") {
-  rangeTranslation = "месяц";
-} else if (range === "week") {
-  rangeTranslation = "неделю";
-} else {
-  rangeTranslation = "период";
+for (let i = 0; i < word.length; i++) {
+    let currentChar = word[i].toLowerCase();
+    if (currentChar !== 'а' && currentChar !== 'о') {
+        newWord += word[i];
+    }
 }
 
-let result = `${price} Р в ${rangeTranslation}`;
-alert(result); // Вывод результата в консоль */
+alert(newWord);
 
-/* 
-let temp = parseInt(prompt("Введите температуру:")); 
-let weather = prompt("Введите погоду:"); 
-let activity;
+ */
+// 2
+/* let num = parseInt(prompt("Введите число:"));
+let result = '';
 
-if (temp >= 25 && weather === "clear") {
-  activity = "golf";
-} else if ((temp >= 10 && temp <= 24) || weather === "cloudy") {
-  activity = "bowling";
-} else {
-  activity = "hiking";
-}
-
-alert(activity);  */
-
-
-/* let a = parseFloat(prompt("Введите значение переменной a:")); // Получение значения a через prompt
-let b = parseFloat(prompt("Введите значение переменной b:")); // Получение значения b через prompt
-let sign = prompt("Введите математический оператор (+, -, /, *):"); // Получение значения sign через prompt
-let result;
-
-if (sign === "+") {
-  result = a + b;
-} else if (sign === "-") {
-  result = a - b;
-} else if (sign === "*") {
-  result = a * b;
-} else if (sign === "/") {
-  if (b !== 0) {
-    result = a / b;
-  } else {
-    alert("Делить на 0 нельзя!");
-  }
-} else {
-  alert("Некорректный математический оператор");
-}
-
-if (result !== undefined) {
-  alert(result);
+for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0) {
+        result += i + "\n";
+    }
 } */
 
+alert(result);
 
-/* let word = prompt("Введите строку:");
-let wordLength = word.length;
-let result;
 
-if (Number.isInteger(Math.sqrt(wordLength))) {
-  result = 1;
-} else {
-  result = 0;
+// 3
+/* let num = parseInt(prompt("Введите число:"));
+let result = '';
+
+for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= i; j++) {
+        result += j;
+    }
+    result += "\n";
 }
 
-alert(result); */
+alert(result);
+ */
+
+// 4
+/* let num = parseInt(prompt("Введите число:"));
+let sum = 0;
+let factorial = 1;
+
+for (let i = 1; i <= num; i++) {
+    factorial *= i;
+    sum += factorial;
+}
+
+alert(sum); */
+
+
+// 5 
+/* let word = prompt("Введите слово:").toLowerCase();
+let reversedWord = '';
+
+for (let i = word.length - 1; i >= 0; i--) {
+    reversedWord += word[i];
+}
+
+if (word === reversedWord) {
+    alert("YES");
+} else {
+    alert("NO");
+}
+  */
