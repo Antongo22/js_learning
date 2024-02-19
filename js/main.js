@@ -1,130 +1,99 @@
-// 1
-/* function sum(a, b) {
+function sum(a, b) {
     return a + b;
 }
 
-let num1 = parseFloat(prompt("Введите первое число:"));
-let num2 = parseFloat(prompt("Введите второе число:"));
 
-let result = sum(num1, num2);
-
-alert("Сумма чисел: " + result); */
-
-// 2
-/* function isEven(number) {
-    if (number % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+function stringLength(str) {
+    return str.length;
 }
 
-let userInput = parseFloat(prompt("Введите число:"));
 
-let isEvenNumber = isEven(userInput);
-
-if (isEvenNumber) {
-    alert("Введенное число является четным.");
-} else {
-    alert("Введенное число не является четным.");
-} */
-
-// 3
-/* 
-function filterPositiveNumbers(numbers) {
-    let positiveNumbers = numbers.filter(function(number) {
-        return number > 0;
-    });
-    return positiveNumbers;
-}
-
-let numbers = [1, -2, 3, -4, 5, -6, 7, -8, 9];
-let positiveNumbers = filterPositiveNumbers(numbers);
-
-alert("Исходный массив: " + numbers + "\nМассив с положительными числами: " + positiveNumbers); */
-
-// 4
-/* function reverseString(str) {
-    return str.split('').reverse().join('');
-}
-
-let inputString = prompt("Введите строку:");
-let reversedString = reverseString(inputString);
-
-alert("Исходная строка: " + inputString + "\nСтрока задом наперед: " + reversedString); */
-
-
-// 5
-/* function uniqueValues(arr) {
-    let uniqueArr = Array.from(new Set(arr));
-    return uniqueArr;
-}
-
-let inputArray = [1, 2, 3, 4, 5, 1, 2, 3];
-let uniqueArray = uniqueValues(inputArray);
-
-alert("Исходный массив: " + inputArray + "\nМассив с уникальными значениями: " + uniqueArray);
- */
-
-// 6 
-/* 
-function sumArray(arr) {
+function sumArray(numbers) {
     let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
     }
     return sum;
 }
 
-let numbers = [1, 2, 3, 4, 5];
-let totalSum = sumArray(numbers);
-
-alert("Сумма всех элементов массива: " + totalSum);
- */
-
-// 7
-/* function doubleArray(arr) {
-    let doubledArray = [];
-    for (let i = 0; i < arr.length; i++) {
-        doubledArray.push(arr[i] * 2);
-    }
-    return doubledArray;
+function isEven(number) {
+    return number % 2 === 0;
 }
 
-let numbers = [1, 2, 3, 4, 5];
-let doubledNumbers = doubleArray(numbers);
-
-alert("Исходный массив: " + numbers + "\nМассив с удвоенными значениями: " + doubledNumbers); */
-
-// 8
-/* function commonElements(arr1, arr2) {
-    let common = [];
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr2.includes(arr1[i])) {
-            common.push(arr1[i]);
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
         }
     }
-    return common;
+    return true;
 }
 
-let array1 = [1, 2, 3, 4, 5];
-let array2 = [3, 4, 5, 6, 7];
-let commonElementsArray = commonElements(array1, array2);
+function stringLengths(arrayOfStrings) {
+    return arrayOfStrings.map(str => str.length);
+}
 
-alert("Первый массив: " + array1 + "\nВторой массив: " + array2 + "\nОбщие элементы: " + commonElementsArray);
- */
 
-// 9 
-/* function factorial(n) {
-    if (n === 0 || n === 1) {
-        return 1;
-    } else {
-        return n * factorial(n - 1);
+function sumOfDigits(number) {
+    let sum = 0;
+    while (number > 0) {
+        sum += number % 10; 
+        number = Math.floor(number / 10); 
     }
+    return sum;
 }
 
-let number = parseInt(prompt("Введите число для вычисления факториала:"));
-let result = factorial(number);
 
-alert("Факториал числа " + number + " равен " + result);
- */
+function getPositiveNumbers(numbers) {
+    return numbers.filter(number => number > 0);
+}
+
+
+
+function capitalizeWords(sentence) {
+    return sentence.split(' ').map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+}
+
+
+function capitalizeWords(sentence) {
+    return sentence.split(' ').map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+}
+
+
+function capitalizeWords(sentence) {
+    return sentence.split(' ').map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+}
+
+
+function replaceVowelsWithAsterisks(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let result = '';
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            result += '*';
+        } else {
+            result += str[i];
+        }
+    }
+
+    return result;
+}
+
+function filterStringsByLength(strings) {
+    return strings.filter(str => str.length > 5);
+}
+
+function mergeUniqueArrays(arr1, arr2) {
+    const mergedArray = [...arr1, ...arr2];
+    return Array.from(new Set(mergedArray));
+}
