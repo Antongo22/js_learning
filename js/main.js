@@ -1,99 +1,52 @@
-function sum(a, b) {
-    return a + b;
-}
+//1
+sum = (a, b) => a + b;
+
+// 2
+greet = (name) => "Hello " + name + "!";
 
 
-function stringLength(str) {
-    return str.length;
-}
+// 3
+evenNumbers = (numbers) =>numbers.filter(number => number % 2 === 0);
+
+// 4
+multiply = (num1, num2) => num1 * num2;
 
 
-function sumArray(numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
+// 5
+addTwo = (numbers) => numbers.map(number => number + 2);
+
+
+// 6
+reverseWords = (str) => {
+    return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+  };
+  
+
+// 7
+square = (num) => num * num;
+
+// 8
+sumArray = (array) => array.reduce((acc, curr) => acc + curr, 0);
+
+
+// 9
+evenNumbers = (numbers) => numbers.filter(number => number % 2 === 0);
+
+// 10   
+multipliedNumbers = (numbers) => numbers.map(number => number * 5);
+
+// 11
+gcd = (a, b) => {
+    if (b === 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
     }
-    return sum;
-}
+};
 
-function isEven(number) {
-    return number % 2 === 0;
-}
-
-function isPrime(number) {
-    if (number <= 1) {
-        return false;
-    }
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-function stringLengths(arrayOfStrings) {
-    return arrayOfStrings.map(str => str.length);
-}
-
-
-function sumOfDigits(number) {
-    let sum = 0;
-    while (number > 0) {
-        sum += number % 10; 
-        number = Math.floor(number / 10); 
-    }
-    return sum;
-}
-
-
-function getPositiveNumbers(numbers) {
-    return numbers.filter(number => number > 0);
-}
-
-
-
-function capitalizeWords(sentence) {
-    return sentence.split(' ').map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-}
-
-
-function capitalizeWords(sentence) {
-    return sentence.split(' ').map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-}
-
-
-function capitalizeWords(sentence) {
-    return sentence.split(' ').map(word => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-}
-
-
-function replaceVowelsWithAsterisks(str) {
-    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-    let result = '';
-
-    for (let i = 0; i < str.length; i++) {
-        if (vowels.includes(str[i])) {
-            result += '*';
-        } else {
-            result += str[i];
-        }
-    }
-
-    return result;
-}
-
-function filterStringsByLength(strings) {
-    return strings.filter(str => str.length > 5);
-}
-
-function mergeUniqueArrays(arr1, arr2) {
-    const mergedArray = [...arr1, ...arr2];
-    return Array.from(new Set(mergedArray));
-}
+// 12
+const findUnique = (array) => {
+    return array.filter((value, index, self) => {
+        return self.indexOf(value) === index;
+    });
+};
