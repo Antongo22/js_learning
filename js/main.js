@@ -1,52 +1,47 @@
-//1
-sum = (a, b) => a + b;
+// 1
+function checkElem(num) {
+    if (num % 7 === 0) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
 
 // 2
-greet = (name) => "Hello " + name + "!";
 
+function changeElem(array, n) {
+    let newArray = array.map(elem => elem * n);
+    return newArray;
+}
 
 // 3
-evenNumbers = (numbers) =>numbers.filter(number => number % 2 === 0);
+function sumElems(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        let num = Number(array[i]);
+        if (!isNaN(num)) {
+            sum += num;
+        }
+    }
+    return sum;
+}
 
 // 4
-multiply = (num1, num2) => num1 * num2;
+function reverseIndex(array) {
+    let reversedArray = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        reversedArray.push(array[i]);
+    }
+    console.log(reversedArray);
+}
 
 
 // 5
-addTwo = (numbers) => numbers.map(number => number + 2);
-
-
-// 6
-reverseWords = (str) => {
-    return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
-  };
-  
-
-// 7
-square = (num) => num * num;
-
-// 8
-sumArray = (array) => array.reduce((acc, curr) => acc + curr, 0);
-
-
-// 9
-evenNumbers = (numbers) => numbers.filter(number => number % 2 === 0);
-
-// 10   
-multipliedNumbers = (numbers) => numbers.map(number => number * 5);
-
-// 11
-gcd = (a, b) => {
-    if (b === 0) {
-        return a;
-    } else {
-        return gcd(b, a % b);
+function checkElem(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i])) {
+            return true;
+        }
     }
-};
-
-// 12
-const findUnique = (array) => {
-    return array.filter((value, index, self) => {
-        return self.indexOf(value) === index;
-    });
-};
+    return false;
+}
