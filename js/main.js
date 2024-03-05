@@ -1,85 +1,52 @@
-// 1. Создайте объект person с полями name, age, city и выведите информацию о нем в консоль
-const person = {
-    name: "John",
-    age: 30,
-    city: "New York"
-  };
-  
-  console.log("Person:", person);
-  
-  // 2. Добавьте метод greet объекту person который будет выводить приветствие с именем человека
-  person.greet = function() {
-    console.log(`Hello, my name is ${this.name}`);
-  };
-  
-  person.greet();
-  
-  // 3. Создать несколько объектов book1, book2, book3 с полями title, author, year и вывести их информацию в консоль
-  const book1 = {
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    year: 1925
-  };
-  
-  const book2 = {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    year: 1960
-  };
-  
-  const book3 = {
-    title: "1984",
-    author: "George Orwell",
-    year: 1949
-  };
-  
-  console.log("Books:", book1, book2, book3);
+// Создать массив чисел и вывести на экран их сумму
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log("Сумма чисел:", sum);
 
-  // 4. Создайте объект car с полями brand, model, year и напишите функцию getCarInfo которая возвращает строку с информацией о машине
-  const car = {
-    brand: "Toyota",
-    model: "Camry",
-    year: 2022
-  };
-  
-  function getCarInfo(car) {
-    return `${car.brand} ${car.model} (${car.year})`;
-  }
-  
-  console.log("Car:", getCarInfo(car));
-  
-  // 5. Создайте объект student с полями name, age, grades, где grades это массив оценок студента. Напишите метод getAverageGrade который возвращает среднюю оценку студента
-  const student = {
-    name: "Alice",
-    age: 20,
-    grades: [90, 85, 95, 88, 92, 100, 70, 65, 82, 78]
-  };
-  
-  student.getAverageGrade = function() {
-    const total = this.grades.reduce((acc, curr) => acc + curr, 0);
-    return total / this.grades.length;
-  };
-  
-  console.log("Average Grade:", student.getAverageGrade());
-  
-  // 6. Создайте объект rectangle с полями width и height и добавьте метод getArea который вернет площадь прямоугольника
-  const rectangle = {
-    width: 5,
-    height: 10,
-    getArea: function() {
-      return this.width * this.height;
-    }
-  };
-  
-  console.log("Rectangle Area:", rectangle.getArea());
-  
-  // 7. Создайте объект circle с полем radius и методом getCircumference для расчета площади круга
-  const circle = {
-    radius: 5,
-    getCircumference: function() {
-      return 2 * Math.PI * this.radius;
-    }
-  };
-  
-  console.log("Circle Circumference:", circle.getCircumference());
-  
+// Создать массив строк и вывести на экран их длины
+const strings = ["apple", "banana", "orange"];
+const lengths = strings.map(str => str.length);
+console.log("Длины строк:", lengths);
+
+// Создать массив из чисел и найти среднее значение
+const numArray = [10, 20, 30, 40, 50];
+const average = numArray.reduce((acc, curr) => acc + curr, 0) / numArray.length;
+console.log("Среднее значение чисел:", average);
+
+// Создать массив объектов с информацией о студентах и вывести их на экран
+const students = [
+    { name: "Alice", age: 20 },
+    { name: "Bob", age: 22 },
+    { name: "Charlie", age: 21 }
+];
+console.log("Информация о студентах:", students);
+
+// Создать массив и перевернуть его
+const arrayToReverse = [1, 2, 3, 4, 5];
+const reversedArray = arrayToReverse.reverse();
+console.log("Перевернутый массив:", reversedArray);
+
+// Создайте пустой массив с переменной myArray
+let myArray = [];
+
+// Добавьте элемент apple в конец массива
+myArray.push("apple");
+
+// Добавьте элемент banana в начало массива
+myArray.unshift("banana");
+
+// Добавьте элемент orange во вторую позицию массива
+myArray.splice(1, 0, "orange");
+
+// Удалите первый элемент массива
+myArray.shift();
+
+// Измените banana на pear
+const bananaIndex = myArray.indexOf("banana");
+if (bananaIndex !== -1) {
+    myArray[bananaIndex] = "pear";
+}
+
+// Выведите в консоль длину массива и его содержимое
+console.log("Длина массива:", myArray.length);
+console.log("Содержимое массива:", myArray);
