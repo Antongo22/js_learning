@@ -1,112 +1,100 @@
 // 1
-let person = {
-  name: "Anton", 
-  sayHi: function() {
-    console.log("Привет, меня зовут " + this.name + "!");
+function squareNumber(input) {
+  try {
+      if (isNaN(input)) {
+          throw "Ошибка: Введите числовое значение";
+      } else {
+          return input * input;
+      }
+  } catch (error) {
+      return error;
   }
-};
+}
 
-person.sayHi(); 
+console.log(squareNumber(5)); 
+console.log(squareNumber('abc')); 
 
 
 // 2
-function showGlobalThis() {
-  console.log(this);
+function parseToNumber(str) {
+  try {
+      const parsedNumber = parseFloat(str);
+      if (isNaN(parsedNumber)) {
+          throw "Ошибка: Невозможно преобразовать строку в число";
+      } else {
+          return parsedNumber;
+      }
+  } catch (error) {
+      return error;
+  }
 }
 
-showGlobalThis();
-
+console.log(parseToNumber("123")); 
+console.log(parseToNumber("abc")); 
 
 // 3
-class Car {
-  constructor(brand) {
-    this.brand = brand;
-  }
-
-  showBrand() {
-    console.log("Марка автомобиля: " + this.brand);
+function divideNumbers(dividend, divisor) {
+  try {
+      if (divisor === 0) {
+          throw "Ошибка: Деление на ноль невозможно";
+      } else {
+          return dividend / divisor;
+      }
+  } catch (error) {
+      return error;
   }
 }
 
-let myCar = new Car("Toyota");
-
-myCar.showBrand(); 
+console.log(divideNumbers(10, 2)); 
+console.log(divideNumbers(10, 0)); 
 
 // 4
-function Car1(brand) {
-  this.brand = brand;
+function sumArray(numbers) {
+  try {
+      let total = 0;
+      for (let i = 0; i < numbers.length; i++) {
+          if (isNaN(numbers[i])) {
+              throw "Ошибка: Массив содержит нечисловые значения";
+          } else {
+              total += numbers[i];
+          }
+      }
+      return total;
+  } catch (error) {
+      return error;
+  }
 }
 
-function showBrand() {
-  console.log("Марка автомобиля: " + this.brand);
-}
-
-let myCar1 = new Car1("Toyota");
-showBrand.call(myCar1); 
-
+console.log(sumArray([1, 2, 3, 4, 5])); 
+console.log(sumArray([1, 2, 'a', 4, 5]));
 
 // 5
-const calculator = {
-  add: function(a, b) {
-    return a + b;
-  },
-  subtract: function(a, b) {
-    return a - b;
-  },
-  multiply: function(a, b) {
-    return a * b;
-  },
-  divide: function(a, b) {
-    if (b === 0) {
-      return "Деление на ноль невозможно";
-    }
-    return a / b;
+function reverseString(str) {
+  try {
+      if (typeof str !== 'string') {
+          throw "Ошибка: Переданное значение не является строкой";
+      } else {
+          return str.split('').reverse().join('');
+      }
+  } catch (error) {
+      return error;
   }
-};
-
-console.log("Сумма:", calculator.add(5, 3));   
-console.log("Разность:", calculator.subtract(8, 2)); 
-console.log("Произведение:", calculator.multiply(4, 6)); 
-console.log("Частное:", calculator.divide(10, 2)); 
-console.log("Деление на ноль:", calculator.divide(10, 0)); 
-
-// 6
-const user = {
-  name: "John",
-  changeName: function(newName) {
-    this.name = newName;
-  }
-};
-
-console.log("Изначальное имя:", user.name); 
-
-user.changeName("Alice");
-
-console.log("Новое имя:", user.name); 
-
-// 7 
-const person1 = {
-  name: "John",
-  introduce: function() {
-    console.log("Привет, меня зовут " + this.name + "!");
-  }
-};
-
-person1.introduce(); 
-
-// 8
-const timer = {
-  start: function(callback, time) {
-    setTimeout(callback, time);
-  }
-};
-
-function callbackFunction() {
-  console.log("Таймер сработал!");
 }
 
-console.log("Запускаем таймер...");
-timer.start(callbackFunction, 3000); 
+console.log(reverseString("hello")); 
+console.log(reverseString(123)); 
+// 6
+function multiplyNumbers(num1, num2) {
+  try {
+      if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+          throw "Ошибка: Одно из значений не является числом";
+      } else {
+          return num1 * num2;
+      }
+  } catch (error) {
+      return error;
+  }
+}
 
-
-
+console.log(multiplyNumbers(5, 10)); 
+console.log(multiplyNumbers("abc", 10)); 
