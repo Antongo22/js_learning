@@ -1,100 +1,40 @@
-// 1
-function squareNumber(input) {
-  try {
-      if (isNaN(input)) {
-          throw "Ошибка: Введите числовое значение";
-      } else {
-          return input * input;
-      }
-  } catch (error) {
-      return error;
+class Book {
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
+    }
+  
+    getDetails() {
+      console.log(`Название: ${this.title}, Автор: ${this.author}`);
+    }
   }
-}
-
-console.log(squareNumber(5)); 
-console.log(squareNumber('abc')); 
-
-
-// 2
-function parseToNumber(str) {
-  try {
-      const parsedNumber = parseFloat(str);
-      if (isNaN(parsedNumber)) {
-          throw "Ошибка: Невозможно преобразовать строку в число";
-      } else {
-          return parsedNumber;
-      }
-  } catch (error) {
-      return error;
+  
+  const myBook = new Book("1984", "Джордж Оруэлл");
+  myBook.getDetails();
+  
+  class Person {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+  
+    greet() {
+      console.log(`Привет, меня зовут ${this.name} и мне ${this.age} лет.`);
+    }
   }
-}
-
-console.log(parseToNumber("123")); 
-console.log(parseToNumber("abc")); 
-
-// 3
-function divideNumbers(dividend, divisor) {
-  try {
-      if (divisor === 0) {
-          throw "Ошибка: Деление на ноль невозможно";
-      } else {
-          return dividend / divisor;
-      }
-  } catch (error) {
-      return error;
+  
+  class Student extends Person {
+    constructor(name, age, studentId) {
+      super(name, age);
+      this.studentId = studentId;
+    }
+  
+    study() {
+      console.log("Студент учится.");
+    }
   }
-}
-
-console.log(divideNumbers(10, 2)); 
-console.log(divideNumbers(10, 0)); 
-
-// 4
-function sumArray(numbers) {
-  try {
-      let total = 0;
-      for (let i = 0; i < numbers.length; i++) {
-          if (isNaN(numbers[i])) {
-              throw "Ошибка: Массив содержит нечисловые значения";
-          } else {
-              total += numbers[i];
-          }
-      }
-      return total;
-  } catch (error) {
-      return error;
-  }
-}
-
-console.log(sumArray([1, 2, 3, 4, 5])); 
-console.log(sumArray([1, 2, 'a', 4, 5]));
-
-// 5
-function reverseString(str) {
-  try {
-      if (typeof str !== 'string') {
-          throw "Ошибка: Переданное значение не является строкой";
-      } else {
-          return str.split('').reverse().join('');
-      }
-  } catch (error) {
-      return error;
-  }
-}
-
-console.log(reverseString("hello")); 
-console.log(reverseString(123)); 
-// 6
-function multiplyNumbers(num1, num2) {
-  try {
-      if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-          throw "Ошибка: Одно из значений не является числом";
-      } else {
-          return num1 * num2;
-      }
-  } catch (error) {
-      return error;
-  }
-}
-
-console.log(multiplyNumbers(5, 10)); 
-console.log(multiplyNumbers("abc", 10)); 
+  
+  const student = new Student("Антон", 17, "12345");
+  student.greet(); 
+  student.study(); 
+  
