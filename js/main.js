@@ -1,190 +1,260 @@
-// Задача 1
-class Animal {
-  makeSound() {
-    console.log("Animal makes a sound");
+// 1
+/* let obj = { 
+  price1: 100, 
+  price2: 150, 
+  price3: 200, 
+  price4: 100,
+  price5: 150, 
+};
+
+let sum = 0;
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+      sum += obj[key];
   }
 }
 
-class Cat extends Animal {
-  makeSound() {
-    console.log("meow");
-  }
+console.log(sum); 
+ */
+
+// 2
+/* let array = [ 
+  {id: 1, name: 'apple'}, 
+  {id: 2, name: 'watermelon'}, 
+  {id: 3, name: 'qiwi'}, 
+  {id: 4, name: 'lemon'} 
+];
+
+let newArray = array.map(obj => Object.values(obj));
+
+console.log(newArray); */
+
+// 3
+/* function logString(...args) {
+  console.log(args.join(' ') + ' ');
 }
 
-class Dog extends Animal {
-  makeSound() {
-    console.log("woof");
-  }
+logString("Hello", "my", "world!"); */
+
+// 4
+/* function checkObj(obj) {
+  return obj.hasOwnProperty('particle');
 }
 
+console.log(checkObj({id: 1, particle: 10}));
+console.log(checkObj({id: 2, name: "tag"}));
+ */
 
-// Задача 2
-class Shape {
-  calculateArea() {
-    console.log("Calculating area of a generic shape");
+// 5
+/* function generateArray(array) {
+  for (let i = 0; i < array.length; i++) {
+      if (typeof array[i] === 'object' && !Array.isArray(array[i])) {
+          array[i] = Object.values(array[i]);
+      }
   }
+  return array;
 }
 
-class Circle extends Shape {
-  constructor(radius) {
-    super();
-    this.radius = radius;
-  }
-
-  calculateArea() {
-    console.log("Area of the circle:", Math.PI * this.radius ** 2);
-  }
-}
-
-class Square extends Shape {
-  constructor(sideLength) {
-    super();
-    this.sideLength = sideLength;
-  }
-
-  calculateArea() {
-    console.log("Area of the square:", this.sideLength ** 2);
-  }
-}
-
-
-// Задача 3
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-
-  greet() {
-    console.log(`Hello, my name is ${this.name}`);
-  }
-}
-
-class Doctor extends Person {
-  greet() {
-    console.log(`Hello, I'm Dr. ${this.name}`);
-  }
-}
-
-class Teacher extends Person {
-  greet() {
-    console.log(`Hello, I'm Teacher ${this.name}`);
-  }
-}
-
-
-
-// Задача 4
-class Vehicle {
-  start() {
-    console.log("Vehicle is starting");
-  }
-
-  stop() {
-    console.log("Vehicle is stopping");
-  }
-}
-
-class Car extends Vehicle {
-  start() {
-    console.log("Car engine is starting");
-  }
-
-  stop() {
-    console.log("Car engine is stopping");
-  }
-}
-
-class Bike extends Vehicle {
-  start() {
-    console.log("Bike is starting pedaling");
-  }
-
-  stop() {
-    console.log("Bike is stopping pedaling");
-  }
-}
+let array = [[1], {id: 40}, [100], [300], {part: 10}];
+console.log(generateArray(array));
+ */
 
 // 6
-class Food {
-  constructor(name) {
-    this.name = name;
-  }
+/* let users = [
+  {id: 1, name: 'Anton', lastname: 'Aleynichenko', age: 17},
+  {id: 2, name: 'Artemiy', lastname: 'Aleynichenko', age: 11} 
+];
 
-  taste() {
-    console.log(`The taste of ${this.name} is not defined`);
+function addUser(name, lastname, age) {
+  const id = users.length + 1;
+  users.push({id, name, lastname, age});
+}
+
+function updateUser(id, name, lastname, age) {
+  for (let i = 0; i < users.length; i++) {
+      if (users[i].id === id) {
+          users[i] = {id, name, lastname, age};
+          break;
+      }
   }
 }
 
-class Pizza extends Food {
-  constructor(name, toppings) {
-    super(name);
-    this.toppings = toppings;
-  }
-
-  taste() {
-    console.log(`The taste of ${this.name} pizza with ${this.toppings.join(', ')} toppings is delicious`);
-  }
-
-  bake() {
-    console.log(`Baking ${this.name} pizza...`);
-  }
+function deleteUser(id) {
+  users = users.filter(user => user.id !== id);
 }
 
-class IceCream extends Food {
-  constructor(name, flavor) {
-    super(name);
-    this.flavor = flavor;
-  }
+addUser('Amelia', 'Aleynichenko', 9);
+console.log(users);
 
-  taste() {
-    console.log(`The taste of ${this.name} ice cream with ${this.flavor} flavor is sweet and creamy`);
-  }
+updateUser(2, 'Gosha', 'Zapevalov', 17);
+console.log(users);
 
-  scoop() {
-    console.log(`Scooping ${this.name} ice cream...`);
-  }
-}
+deleteUser(1);
+console.log(users); */
 
 // 7
-class Employee {
-  constructor(name, salary) {
-    this.name = name;
-    this.salary = salary;
+/* let products = [
+  {
+      id: 1,
+      title: 'велосипед',
+      price: 45000,
+      count: 3, // количество на складе
+      marks: [4, 3, 5, 3] // оценки товара от 4х покупателей
+  },
+  {
+      id: 2,
+      title: 'ролики',
+      price: 25000,
+      count: 5,
+      marks: [4, 3, 5, 5]
+  },
+  {
+      id: 3,
+      title: 'арбалет',
+      price: 1700,
+      count: 9,
+      marks: [3, 3, 4, 5]
+  },
+  {
+      id: 4,
+      title: 'коньки',
+      price: 4500,
+      count: 3,
+      marks: [4, 3, 4, 3]
+  },
+  {
+      id: 5,
+      title: 'ракетки',
+      price: 900,
+      count: 15,
+      marks: [5, 3, 5, 3]
+  },
+  {
+      id: 6,
+      title: 'штанги',
+      price: 14000,
+      count: 5,
+      marks: [3, 3, 3, 2]
+  },
+  {
+      id: 7,
+      title: 'стрелы',
+      price: 1200,
+      count: 55,
+      marks: [3, 2, 4, 5]
+  },
+  {
+      id: 8,
+      title: 'мячи',
+      price: 500,
+      count: 49,
+      marks: [5, 4, 4, 4]
+  },
+  {
+      id: 9,
+      title: 'сетка',
+      price: 5000,
+      count: 6,
+      marks: [4, 5, 2, 5]
+  },
+  {
+      id: 10,
+      title: 'гантели',
+      price: 3400,
+      count: 12,
+      marks: [3, 2, 4, 2]
+  },
+  {
+      id: 11,
+      title: 'маты',
+      price: 16500,
+      count: 7,
+      marks: [4, 4, 4, 5]
+  }
+]
+
+const productsMoreThan10 = products.filter(product => product.count > 10);
+console.log("Товары с количеством больше 10:", productsMoreThan10);
+
+const productInRange = products.find(product => product.price >= 800 && product.price <= 900);
+console.log("Товар с ценой от 800 до 900:", productInRange);
+
+const sortedByPrice = products.slice().sort((a, b) => b.price - a.price);
+console.log("Товары отсортированные по цене (по убыванию):", sortedByPrice);
+
+const totalPrice = products.reduce((total, product) => total + (product.price * product.count), 0);
+console.log("Итоговая стоимость всех товаров:", totalPrice);
+
+const transformedProducts = products.map(product => {
+    const marksTotal = product.marks.reduce((total, mark) => total + mark, 0);
+    return {...product, marks_total: marksTotal};
+});
+console.log("Товары с добавленным свойством marks_total:", transformedProducts);
+
+const sortedByMarksTotal = transformedProducts.sort((a, b) => b.marks_total - a.marks_total);
+console.log("Товары отсортированные по marks_total:", sortedByMarksTotal);
+ */
+
+// 8
+class Email {
+  constructor(email) {
+      this.email = email;
   }
 
-  displayInfo() {
-    console.log(`Name: ${this.name}, Salary: $${this.salary}`);
+  get isValid() {
+      const [login, domain] = this.email.split('@');
+      const forbiddenChars = ['*', '#', '$', '%', '^'];
+      const zone = domain.split('.')[1];
+      
+      if (forbiddenChars.some(char => login.includes(char))) {
+          return false;
+      }
+      if (zone.length > 3) {
+          return false;
+      }
+      return true;
+  }
+
+  setEmail(emailArray) {
+      const [login, domain, zone] = emailArray;
+      this.email = `${login}@${domain}.${zone}`;
   }
 }
 
-class Manager extends Employee {
-  constructor(name, salary, department) {
-    super(name, salary);
-    this.department = department;
+const email1 = new Email('example@gmail.com');
+console.log(email1.isValid); 
+
+const email2 = new Email('example@live.com');
+email2.setEmail(['newEmail', 'gmail', 'com']);
+console.log(email2.email);
+console.log(email2.isValid); 
+
+
+// 9
+class Contact extends Email {
+  constructor(email, phone) {
+      super(email);
+      this.phone = phone;
   }
 
-  displayInfo() {
-    super.displayInfo();
-    console.log(`Department: ${this.department}`);
-  }
-
-  scheduleMeeting() {
-    console.log(`${this.name} is scheduling a meeting for the ${this.department} department`);
+  get phoneType() {
+      if (!this.phone.startsWith('+')) {
+        return "Неизвестный";
+      }
+      
+      const phoneLength = this.phone.replace('+', '').length;
+      if (phoneLength === 12) {
+          return "Мобильный";
+      } else if (phoneLength === 18) {
+          return "Городской";
+      } else {
+          return "Неизвестный";
+      }
   }
 }
 
-class Developer extends Employee {
-  constructor(name, salary, programmingLanguage) {
-    super(name, salary);
-    this.programmingLanguage = programmingLanguage;
-  }
+const contact1 = new Contact('example@gmail.com', '+123456789012');
+console.log(contact1.phoneType);
 
-  displayInfo() {
-    super.displayInfo();
-    console.log(`Programming Language: ${this.programmingLanguage}`);
-  }
-
-  writeCode() {
-    console.log(`${this.name} is writing code in ${this.programmingLanguage}`);
-  }
-}
+const contact2 = new Contact('example@live.com', '+123456789012345678');
+console.log(contact2.phoneType); 
